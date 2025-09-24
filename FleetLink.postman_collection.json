@@ -1,0 +1,177 @@
+{
+	"info": {
+		"_postman_id": "fefc2674-beac-430a-b433-aa33a6ceac6e",
+		"name": "FleetLink",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48719415",
+		"_collection_link": "https://dark-shadow-4493590.postman.co/workspace/UTSAVKUMAR-KACHCHHI's-Workspace~364fde3d-9f22-4c21-801d-8d29fc75138c/collection/48719415-fefc2674-beac-430a-b433-aa33a6ceac6e?action=share&source=collection_link&creator=48719415"
+	},
+	"item": [
+		{
+			"name": "get available vehicle",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/vehicles/available?capacityRequired=3000&fromPincode=560001&toPincode=560090&startTime=2025-09-25T10:00:00Z",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vehicles",
+						"available"
+					],
+					"query": [
+						{
+							"key": "capacityRequired",
+							"value": "3000"
+						},
+						{
+							"key": "fromPincode",
+							"value": "560001"
+						},
+						{
+							"key": "toPincode",
+							"value": "560090"
+						},
+						{
+							"key": "startTime",
+							"value": "2025-09-25T10:00:00Z"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add vehicle",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Ashok Leyland Truck\",\r\n  \"capacityKg\": 5000,\r\n  \"tyres\": 12\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/vehicles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vehicles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add bookings",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"vehicleId\": \"68d2c6c15a27107e5317a709\",\r\n  \"fromPincode\": \"560001\",\r\n  \"toPincode\": \"560089\",\r\n  \"startTime\": \"2025-09-30T10:00:00Z\",\r\n  \"customerId\": \"CUST12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/bookings/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bookings",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete booking",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"vehicleId\": \"68d2c6c15a27107e5317a709\",\r\n  \"fromPincode\": \"560001\",\r\n  \"toPincode\": \"560089\",\r\n  \"startTime\": \"2025-09-30T10:00:00Z\",\r\n  \"customerId\": \"CUST12345\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/bookings/68d2d5c1b5bc0d51736fc2c9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bookings",
+						"68d2d5c1b5bc0d51736fc2c9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all bookings",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"vehicleId\": \"68d2c6c15a27107e5317a709\",\r\n  \"fromPincode\": \"560001\",\r\n  \"toPincode\": \"560089\",\r\n  \"startTime\": \"2025-09-30T10:00:00Z\",\r\n  \"customerId\": \"CUST12345\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/bookings/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bookings",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
